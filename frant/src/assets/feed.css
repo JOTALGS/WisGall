@@ -1,0 +1,74 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.grid-item {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.posting-area {
+    border: 1px solid #4b4b4b;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.post-input {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.post-input input {
+    flex: 1;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.post-input button {
+    padding: 5px 10px;
+    background-color: #5d6401;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.post-input button:hover {
+    background-color: #00a06b;
+}
+
+.post {
+    border: 1px solid #007bff;
+    border-radius: 0.5rem;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.people-you-may-know ul,
+.trends ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.people-you-may-know h2,
+.trends h2 {
+    margin-bottom: 10px;
+}
