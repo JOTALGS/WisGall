@@ -5,12 +5,44 @@ import os
 from google.cloud import storage
 from google.oauth2 import service_account
 from datetime import timezone, datetime
+from .models import Course
+from .forms import CourseForm
+from google.cloud import storage
 
 
+@api_view(["POST",])
+def upload_course_cover(request):
 
-@api_view(["GET",])
-def upload_file(request):
+    print('user', request.user)
+    print('request data image:', request.data['image'], 'type:', type(request.data['image']))
+    form = CourseForm(request.POST, request.FILES)
+    message = 'success'
 
+    print('form is valid:', form.is_valid())
+    if form.is_valid():
+        # Upload image to Google Cloud Storage
+        image = form.cleaned_data['image']
+        print(image.name)
+        client = storage.Client()
+        bucket = client.bucket('wisgallery_content')
+        blob = bucket.blob(image.name)
+        blob.upload_from_string(image.read(), content_type=image.content_type)
+
+        # Save course data
+        course = form.save(commit=False)
+        course.image_blob_name = blob.name
+        course.owner = request.user
+        course.save()
+    else:
+        message = form.errors.as_json()
+    
+    print(message)
+
+    return Response({'status': message})
+
+
+@api_view(["POST",])
+def upload_lesson(request):
     # Authenticate to Google Cloud Storage
     storage_client = storage.Client()
 
@@ -33,11 +65,11 @@ def upload_file(request):
 
 
 @api_view(["GET"])
-def get_image_url(request):
+def get_image_url(request, blob_name):
     bucket_name = 'wisgallery_content'
-    blob_name = 'pyhack.png'
+    ## blob_name = 'pyhack.png'
 
-    credentials_path = '/home/jota/Desktop/HOLBE/Projects/django-react-t1/api/credentials.json'
+    credentials_path = '/home/jota/Documentos/Projects/WisGall/api/credentials.json'
     credentials = service_account.Credentials.from_service_account_file(credentials_path)
 
     # Authenticate to Google Cloud Storage

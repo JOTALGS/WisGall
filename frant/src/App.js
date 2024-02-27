@@ -30,7 +30,7 @@ function App() {
               <Navbar.Collapse id="responsive-navbar-nav">
                   <Nav className="me-auto">
                       <Nav.Link href="/store">Store</Nav.Link>
-                      <Nav.Link href="/feed">Collection</Nav.Link>
+                      <Nav.Link href="/collection">Collection</Nav.Link>
                       <Nav.Link href="#" className=''>More deets</Nav.Link>
                       <Form className="d-flex" style={{"marginLeft": "5px",}}>
                           <Form.Control
@@ -45,7 +45,7 @@ function App() {
                 </Navbar.Collapse>
               <NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
                   <NavDropdown.Item href="#action/3.1">My Profile</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">Upload your Course</NavDropdown.Item>
+                  <NavDropdown.Item href="/upload">Upload your Course</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.3">Statsistics</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item onClick={handleLogout} href="/">

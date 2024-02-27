@@ -69,7 +69,7 @@ const Login = (props) => {
 
             setUserInfo(response.data)
             console.log('Retrieve me successful:', response.data);
-            navigate('/feed')
+            navigate('/collection')
             window.location.reload()
             // Handle successful registration (e.g., show a success message)
         } catch (error) {

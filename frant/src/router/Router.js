@@ -5,7 +5,11 @@ import { Routes, Route }
 import Register from "../views/Register";
 import Home from "../views/Home";
 import Login from "../views/Login";
-import Feed from "../views/Feed";
+import Collection from "../views/Collection";
+import Store from "../views/Store";
+import Upload from "../views/UploadCover";
+import UploadLessons from "../views/UploadLessons";
+
 
 const Rout = () => (
     <Routes>
@@ -14,8 +18,8 @@ const Rout = () => (
             Component={Home}
         />
         <Route
-            exact path="/feed"
-            Component={Feed}
+            exact path="/collection"
+            Component={Collection}
         />
         <Route
             exact path="/register"
@@ -24,6 +28,18 @@ const Rout = () => (
         <Route
             exact path="/login"
             Component={Login}
+        />
+        <Route
+            exact path="/store"
+            Component={Store}
+        />
+        <Route
+            exact path="/upload"
+            Component={Upload}
+        />
+        <Route
+            exact path="/upload/lessons"
+            Component={UploadLessons}
         />
     </Routes>
 );

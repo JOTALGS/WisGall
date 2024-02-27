@@ -1,0 +1,47 @@
+.post {
+    border: 1px solid #007bff;
+    border-radius: 0.5rem;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.recomended-courses ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.recomended-courses h2{
+    margin-bottom: 10px;
+}
+
+.recomended-courses {
+    background-color: #f2f2f2;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.recomended-courses h2 {
+    margin-bottom: 10px;
+}
+
+.recomended-courses ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.recomended-courses li {
+    background-color: #ddd;
+    padding: 12px;
+    margin-bottom: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.recomended-courses li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.recomended-courses li:hover {
+    background-color: #5757575e;
+}

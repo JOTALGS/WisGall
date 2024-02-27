@@ -1,11 +1,11 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import '../assets/feed.css';
+import '../assets/collection.css';
 import Trends from '../components/Trends';
 import UserSuggestions from '../components/UserSuggestions';
 import PostItem from '../components/PostItem';
 
-const Feed = () => {
+const Collection = () => {
   return (
     <div className="container">
     <div className="row">
@@ -22,4 +22,4 @@ const Feed = () => {
 );
 }
 
-export default Feed
+export default Collection

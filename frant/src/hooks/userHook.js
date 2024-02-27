@@ -73,8 +73,8 @@ export const UserProvider = ({ children }) => {
         localStorage.removeItem('user.email');
     };
 
-    const refreshToken = () => {
-        axios.post('/api/refresh/', { refresh: user.refresh })
+    const refreshToken = (data) => {
+        axios.post('http://127.0.0.1:8000/api/refresh/', { refresh: data })
             .then((response) => {
                 setUser({
                     ...user,

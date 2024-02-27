@@ -2,7 +2,7 @@ function UserSuggestions() {
 
 
     return (
-        <div className="people-you-may-know">
+    <div className="recomended-courses">
         <h2>Recomended Courses</h2>
         <ul>
             <li>John Doe</li>
